@@ -12,9 +12,12 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowDropDown
 import androidx.compose.material3.Button
+import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
@@ -61,27 +64,52 @@ fun UnitConverter() {
             // outline
         })
 
+        Spacer(modifier = Modifier.height(16.dp))
         // here all the elements will be stacked next to each other
         Row {
             Box {
                 Button(onClick = { /*TODO*/ }) {
                     Text(text = "Select")
-                    Icon(
-                        Icons.Default.ArrowDropDown,
+                    Icon(Icons.Default.ArrowDropDown,
                         contentDescription = "Arrow Down")
                 }
-            }
-            Box {
-                Button(onClick = { /*TODO*/ }) {
-                    Text(text = "Select")
-                    Icon(
-                        Icons.Default.ArrowDropDown,
-                        contentDescription = "Arrow Down")
+                DropdownMenu(expanded = false, onDismissRequest = { /*TODO*/ }) {
+                    DropdownMenuItem(text = { Text(text = "Millimeter")},
+                        onClick = { /*TODO*/ })
+                    DropdownMenuItem(text = { Text(text = "Centimeter")},
+                        onClick = { /*TODO*/ })
+                    DropdownMenuItem(text = { Text(text = "Meter")},
+                        onClick = { /*TODO*/ })
+                    DropdownMenuItem(text = { Text(text = "Kilometer")},
+                        onClick = { /*TODO*/ }
+                    )
                 }
 
             }
+
+            Spacer(modifier = Modifier.width(16.dp))
+
+            Box {
+                Button(onClick = { /*TODO*/ }) {
+                    Text(text = "Select")
+                    Icon(Icons.Default.ArrowDropDown,
+                        contentDescription = "Arrow Down")
+                }
+                DropdownMenu(expanded = false, onDismissRequest = { /*TODO*/ }) {
+                    DropdownMenuItem(text = { Text(text = "Millimeter")},
+                        onClick = { /*TODO*/ })
+                    DropdownMenuItem(text = { Text(text = "Centimeter")},
+                        onClick = { /*TODO*/ })
+                    DropdownMenuItem(text = { Text(text = "Meter")},
+                        onClick = { /*TODO*/ })
+                    DropdownMenuItem(text = { Text(text = "Kilometer")},
+                        onClick = { /*TODO*/ }
+                    )
+                }
+            }
         }
-        Spacer(modifier = Modifier.height(16.dp))
+
+        //Spacer(modifier = Modifier.height(16.dp))
         Text(text = "The results")
     }
 }
