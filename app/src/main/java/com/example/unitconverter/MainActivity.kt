@@ -71,7 +71,7 @@ fun UnitConverter() {
 
     // here all the elements will be stacked below each other
     Column (modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
+        verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally) {
         Text("Unit Converter")
         Spacer(modifier = Modifier.height(16.dp))
@@ -124,6 +124,27 @@ fun UnitConverter() {
                             inputUnit = "Kilometer"
                             iConversionFactor.value = 1000.00
                             theConverter()
+                        })
+                    DropdownMenuItem(text = { Text("Inches")},
+                        onClick = {
+                            iExpanded = false
+                            inputUnit = "Inches"
+                            iConversionFactor.value = 0.0254
+                            theConverter()
+                        })
+                    DropdownMenuItem(text = { Text("Feet")},
+                        onClick = {
+                            iExpanded = false
+                            inputUnit = "Feet"
+                            iConversionFactor.value = 0.3048
+                            theConverter()
+                        })
+                    DropdownMenuItem(text = { Text("Mile")},
+                        onClick = {
+                            iExpanded = false
+                            inputUnit = "Mile"
+                            iConversionFactor.value = 1609.34
+                            theConverter()
                         }
                     )
                 }
@@ -168,8 +189,30 @@ fun UnitConverter() {
                             outputUnit = "Kilometer"
                             oConversionFactor.value = 1000.00
                             theConverter()
+                        })
+                    DropdownMenuItem(text = { Text("Inches")},
+                        onClick = {
+                            oExpanded = false
+                            outputUnit = "Inches"
+                            oConversionFactor.value = 0.0254
+                            theConverter()
+                        })
+                    DropdownMenuItem(text = { Text("Feet")},
+                        onClick = {
+                            oExpanded = false
+                            outputUnit = "Feet"
+                            oConversionFactor.value = 0.3048
+                            theConverter()
+                        })
+                    DropdownMenuItem(text = { Text("Mile")},
+                        onClick = {
+                            oExpanded = false
+                            outputUnit = "Mile"
+                            oConversionFactor.value = 1609.34
+                            theConverter()
                         }
                     )
+
                 }
             }
         }
